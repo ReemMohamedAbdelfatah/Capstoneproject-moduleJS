@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', 
+  mode: 'development',
   entry: {
     main: path.resolve(__dirname, 'src/index.js'),
   },
@@ -23,8 +23,8 @@ module.exports = {
   },
   // plugins
   plugins: [new HtmlWebpackPlugin({
-    title: 'Let Us Organize Your Day :)', 
-    filename: 'index.html', 
+    title: 'Let Us Organize Your Day :)',
+    filename: 'index.html',
     template: path.resolve(__dirname, 'src/temp.html'),
   })],
 };
