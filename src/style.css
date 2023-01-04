@@ -1,3 +1,24 @@
-* {
+body {
+  background-color: orangered;
+  font-family: 'East Sea Dokdo','Dancing Script', cursive;
   margin: 0;
+}
+h1 {
+  color: black;
+}
+
+ol {
+  list-style: none;
+}
+
+.card {
+  background-color: #f4f4f4;
+  color: #222;
+  padding: 40px;
+}
+
+#pokeList {
+  padding-inline-start: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 5fr));
 }
