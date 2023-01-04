@@ -3,8 +3,25 @@ body {
   font-family: 'East Sea Dokdo','Dancing Script', cursive;
   margin: 0;
 }
+
+#logo {
+  color: black;
+  border:3px solid black;    
+  height:100px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+   width:100px;
+   text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
 h1 {
   color: black;
+  font-size: 2rem;
 }
 
 ol {
@@ -15,10 +32,43 @@ ol {
   background-color: #f4f4f4;
   color: #222;
   padding: 40px;
+  width: 150px;
 }
 
 #pokeList {
   padding-inline-start: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 5fr));
+  gap: 7px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav-list {
+display: flex;
+font-size: 2rem;
+gap: 25px;
+}
+
+#container {
+  
+overflow-y: scroll;
+height:calc(80vh - 56px);
+margin: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  font-size: 2rem;
+}
+
+#like {
+  border: none;
+  margin-left: 10px;
+}
+
+button:hover {color: orangered;}

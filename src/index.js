@@ -12,7 +12,7 @@ const fetchPokemon = () => {
       name: result.name,
       id: result.id,
       image: result.sprites['front_default'],
-      type: result.types.map((type) => type.type.name).join(', ')
+      type: result.types.map((type) => type.type.name)
     }));
     displayPokemon(pokemon);
   });
@@ -20,12 +20,13 @@ const fetchPokemon = () => {
 };
 
 const displayPokemon = (pokemon) => {
-  console.log(pokemon);
   const pokemonHTMLString = pokemon.map( pokeman => `
   <li class="card">
      <img class="card-image" src="${pokeman.image}">
-     <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+     <h2 class="card-title">${pokeman.id}. ${pokeman.name}<button id="like"><i class="number-likes"></i><i class="fa fa-heart"></i></button></h2>
      <p class="card-subtitle">Type: ${pokeman.type}</p>
+     <button id="commentBtn">Comment</button>
+     <button id="reservationBtn">Reserve</button>
   </li>`);
   pokeList.innerHTML = pokemonHTMLString;
 }
