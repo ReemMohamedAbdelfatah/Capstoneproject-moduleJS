@@ -1,18 +1,18 @@
 body {
   background-color: orangered;
-  font-family: 'East Sea Dokdo','Dancing Script', cursive;
+  font-family: 'East Sea Dokdo', 'Dancing Script', cursive;
   margin: 0;
 }
 
 #logo {
   color: black;
-  border:3px solid black;    
-  height:100px;
-  border-radius:50%;
-  -moz-border-radius:50%;
-  -webkit-border-radius:50%;
-   width:100px;
-   text-align: center;
+  border: 3px solid black;
+  height: 100px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 100px;
+  text-align: center;
 }
 
 ul {
@@ -53,15 +53,15 @@ nav {
 }
 
 #nav-list {
-display: flex;
-font-size: 2rem;
-gap: 25px;
+  display: flex;
+  font-size: 2rem;
+  gap: 25px;
 }
 
 #container {
-overflow-y: scroll;
-height:calc(80vh - 56px);
-margin: 10px;
+  overflow-y: scroll;
+  height: calc(80vh - 56px);
+  margin: 10px;
 }
 
 footer {
@@ -79,7 +79,7 @@ footer p {
   margin-left: 10px;
 }
 
-button:hover {color: orangered;}
+button:hover { color: orangered; }
 
 .card:hover {
   animation: bounce 0.5s linear;
@@ -93,16 +93,18 @@ button:hover {color: orangered;}
 
 @keyframes bounce {
   20% {
-      transform: translateY(-6px);
+    transform: translateY(-6px);
   }
+
   40% {
-      transform: translateY(0px);
+    transform: translateY(0);
   }
 
   80% {
-      transform: translateY(-2px);
+    transform: translateY(-2px);
   }
+
   100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
