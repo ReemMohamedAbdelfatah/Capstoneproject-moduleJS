@@ -27,7 +27,7 @@ const displayPokemon = (pokemon) => {
      <p class="card-subtitle">Type: ${pokeman.type}</p>
      <button id="commentBtn">Comment</button>
      <button id="reservationBtn">Reserve</button>
-  </li>`);
+  </li>`).join('');
   pokeList.innerHTML = pokemonHTMLString;
 }
 
