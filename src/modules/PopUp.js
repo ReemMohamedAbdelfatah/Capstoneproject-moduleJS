@@ -36,7 +36,10 @@ class PopUp {
     name.innerText = 'Pikachu';
     weight.innerText = '60 lbs';
 
-    this.loadComments(body);
+    const id = 'item1';
+    this.loadComments(div, id);
+
+    this.commentForm(div, id)
 
     const close = this.createElements('button', section);
     close.innerText = 'X';
@@ -56,15 +59,22 @@ class PopUp {
     }
   }
 
-  static async loadComments(body) {
-    const div = this.createElements('div', body);
+  static async loadComments(section, id) {
+    const div = this.createElements('div', section);
+    div.classList.add('comments')
 
     const h3 = this.createElements('h3', div);
     h3.innerText = 'Comments (2)';
 
-    const id = 'item1';
+    await this.appendComments(div, id)
+  }
 
+  static async appendComments(div, id, loading = false) {
     const comments = await this.getComments(id);
+
+    if (loading) {
+      div.removeChild(div.querySelector('.loader'));
+    }
 
     comments.forEach((commentObj) => {
       const { creation_date: date, username, comment } = commentObj;
@@ -72,6 +82,58 @@ class PopUp {
       node.classList.add('comment');
       node.innerText = `${date}  ${username}: ${comment}`;
     });
+  }
+
+  static commentForm(section, id) {
+    const h4 = this.createElements('h4', section)
+    h4.innerText = 'Add a comment'
+    const form = this.createElements('form', section)
+    form.classList.add('form')
+
+    const inputs = this.createElements(['input', 'input', 'input'], form)
+    for (let i = 0; i < 3; i++) {
+      const input = inputs[i];
+
+      if (i === 2) {
+        input.type = 'button'
+        input.value = 'Comment'
+        input.classList.add('submit')
+
+        input.addEventListener('click', async () => {
+          let nameValue = document.querySelector('#name').value
+          let commentValue = document.querySelector('#name').value
+
+          const data = {
+            item_id: id,
+            username: nameValue,
+            comment: commentValue
+          }
+
+          if (data.username && data.comment) {
+            const comments = document.querySelector('.comments')
+            while (comments.querySelector('.comment')) {
+              comments.removeChild(comments.querySelector('.comment'));
+            }
+
+            const loader = this.createElements('div', comments)
+            loader.classList.add('loader')
+
+            const response = await this.postComments(data)
+
+            await this.appendComments(comments, id, true)
+            console.log(response);
+          }
+
+          nameValue = null
+          commentValue = null
+        })
+      } else {
+        input.type = 'text'
+        const placeholderAndId = !i ? ['Your name', 'name'] : ['Your insights', 'comment']
+        input.placeholder = placeholderAndId[0]
+        input.setAttribute('id', placeholderAndId[1])
+      }
+    }
   }
 
   static async getComments(id) {
