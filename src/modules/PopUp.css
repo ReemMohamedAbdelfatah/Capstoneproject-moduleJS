@@ -16,3 +16,8 @@ button {
   height: 4vh;
   justify-self: flex-end;
 }
+
+.comment {
+  align-self: start;
+  margin: 0.5vh;
+}
