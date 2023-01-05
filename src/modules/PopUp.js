@@ -88,8 +88,8 @@ class PopUp {
 
   static async appendComments(div, id, loading = false) {
     const comments = await this.getComments(id);
-    if (!comments) return
-    
+    if (!comments) return;
+
     if (loading) {
       div.removeChild(div.querySelector('.loader'));
     }
