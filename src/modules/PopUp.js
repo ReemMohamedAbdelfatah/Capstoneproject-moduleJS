@@ -64,9 +64,27 @@ class PopUp {
     div.classList.add('comments');
 
     const h3 = this.createElements('h3', div);
-    h3.innerText = 'Comments (2)';
+    h3.classList.add('comments-heading')
+    h3.innerText = 'Comments';
 
     await this.appendComments(div, id);
+  }
+
+  static changeHeading(count) {
+    const node = document.querySelector('.comments-heading')
+    node.innerHTML = `Comments (${count})`
+  }
+
+  static countComments() {
+    const comments = document.querySelectorAll('.comment')
+
+    let count = 0
+    comments.forEach(comment => {
+      console.log(comment);
+      count += 1
+    })
+
+    return count
   }
 
   static async appendComments(div, id, loading = false) {
@@ -82,6 +100,9 @@ class PopUp {
       node.classList.add('comment');
       node.innerText = `${date}  ${username}: ${comment}`;
     });
+
+    const count = this.countComments()
+    this.changeHeading(count)
   }
 
   static commentForm(section, id) {
