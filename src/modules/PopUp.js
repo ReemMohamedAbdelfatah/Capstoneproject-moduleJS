@@ -39,7 +39,7 @@ class PopUp {
     const id = 'item1';
     this.loadComments(div, id);
 
-    this.commentForm(div, id)
+    this.commentForm(div, id);
 
     const close = this.createElements('button', section);
     close.innerText = 'X';
@@ -61,12 +61,12 @@ class PopUp {
 
   static async loadComments(section, id) {
     const div = this.createElements('div', section);
-    div.classList.add('comments')
+    div.classList.add('comments');
 
     const h3 = this.createElements('h3', div);
     h3.innerText = 'Comments (2)';
 
-    await this.appendComments(div, id)
+    await this.appendComments(div, id);
   }
 
   static async appendComments(div, id, loading = false) {
@@ -85,53 +85,52 @@ class PopUp {
   }
 
   static commentForm(section, id) {
-    const h4 = this.createElements('h4', section)
-    h4.innerText = 'Add a comment'
-    const form = this.createElements('form', section)
-    form.classList.add('form')
+    const h4 = this.createElements('h4', section);
+    h4.innerText = 'Add a comment';
+    const form = this.createElements('form', section);
+    form.classList.add('form');
 
-    const inputs = this.createElements(['input', 'input', 'input'], form)
-    for (let i = 0; i < 3; i++) {
+    const inputs = this.createElements(['input', 'input', 'input'], form);
+    for (let i = 0; i < 3; i += 1) {
       const input = inputs[i];
 
       if (i === 2) {
-        input.type = 'button'
-        input.value = 'Comment'
-        input.classList.add('submit')
+        input.type = 'button';
+        input.value = 'Comment';
+        input.classList.add('submit');
 
         input.addEventListener('click', async () => {
-          let nameValue = document.querySelector('#name').value
-          let commentValue = document.querySelector('#name').value
+          let nameValue = document.querySelector('#name').value;
+          let commentValue = document.querySelector('#comment').value;
 
           const data = {
             item_id: id,
             username: nameValue,
-            comment: commentValue
-          }
+            comment: commentValue,
+          };
 
           if (data.username && data.comment) {
-            const comments = document.querySelector('.comments')
+            const comments = document.querySelector('.comments');
             while (comments.querySelector('.comment')) {
               comments.removeChild(comments.querySelector('.comment'));
             }
 
-            const loader = this.createElements('div', comments)
-            loader.classList.add('loader')
+            const loader = this.createElements('div', comments);
+            loader.classList.add('loader');
 
-            const response = await this.postComments(data)
+            await this.postComments(data);
 
-            await this.appendComments(comments, id, true)
-            console.log(response);
+            await this.appendComments(comments, id, true);
           }
 
-          nameValue = null
-          commentValue = null
-        })
+          nameValue = null;
+          commentValue = null;
+        });
       } else {
-        input.type = 'text'
-        const placeholderAndId = !i ? ['Your name', 'name'] : ['Your insights', 'comment']
-        input.placeholder = placeholderAndId[0]
-        input.setAttribute('id', placeholderAndId[1])
+        input.type = 'text';
+        const [placeholder, apiId] = !i ? ['Your name', 'name'] : ['Your insights', 'comment'];
+        input.placeholder = placeholder;
+        input.setAttribute('id', apiId);
       }
     }
   }
