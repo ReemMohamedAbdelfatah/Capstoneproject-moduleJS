@@ -75,12 +75,11 @@ class PopUp {
     node.innerHTML = `Comments (${count})`;
   }
 
-  static countComments() {
-    const comments = document.querySelectorAll('.comment');
+  static countComments(div) {
+    const comments = div.querySelectorAll('.comment');
 
     let count = 0;
-    comments.forEach((comment) => {
-      console.log(comment);
+    comments.forEach(() => {
       count += 1;
     });
 
@@ -89,7 +88,8 @@ class PopUp {
 
   static async appendComments(div, id, loading = false) {
     const comments = await this.getComments(id);
-
+    if (!comments) return
+    
     if (loading) {
       div.removeChild(div.querySelector('.loader'));
     }
@@ -101,7 +101,7 @@ class PopUp {
       node.innerText = `${date}  ${username}: ${comment}`;
     });
 
-    const count = this.countComments();
+    const count = this.countComments(div);
     this.changeHeading(count);
   }
 
