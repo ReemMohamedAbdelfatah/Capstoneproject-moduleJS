@@ -25,7 +25,6 @@ class PopUp {
   static async open() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/1');
     const json = await response.json();
-    console.log(json);
 
     const body = document.querySelector('body');
 

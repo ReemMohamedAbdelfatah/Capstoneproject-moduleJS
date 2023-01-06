@@ -1,3 +1,4 @@
-import PopUp from './modules/PopUp.js';
+import open from './modules/Reservations/Reservations.js';
 
-PopUp.open();
+// PopUp.open();
+open();
