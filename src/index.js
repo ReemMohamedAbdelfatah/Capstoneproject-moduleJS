@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
 /* eslint-disable  no-unused-vars  , no-use-before-define , no-plusplus */
 import style from './style.css';
-import close from './images/close.jpg';
+import openPopMoal from './modules/Reservation';
 
 const pokeList = document.querySelector('#pokeList');
-const Modal = document.querySelector('.modal-container');
 
 const fetchPokemon = () => {
   const promises = [];
@@ -24,48 +23,7 @@ const fetchPokemon = () => {
 };
 
 window.reservePop = (id) => {
-  // const promises = [];
-  // const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  // promises.push(fetch(url).then((res) => res.json()));
-  // Promise.all(promises).then((results) => {
-  //   const pokemon = results.map((result) => ({
-  //     name: result.name,
-  //     id: result.id,
-  //     image: result.sprites.front_default,
-  //     type: result.types.map((type) => type.type.name),
-  //   }));
-  // });
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) => res.json()).then((data) => {
-    Modal.innerHTML = `
-  <div class="modalbox">
-    <div class="pop-top">
-      <div class="top-title">
-      <img class="popup-image" src='${data.sprites.front_default}' alt="Project Popup Image">
-        <img onclick="CloseModal()" class="close-modal" src="${close}" alt="closebutton">
-    </div>
-  </div>
-  <h1 class="modaltitle">${data.name}</h1>
-    <div class="below-box">
-    <ul>
-    <li><b>Height :</b> ${data.height}</li>
-    <li><b>Weight :</b> ${data.weight}</li>
-    </ul>
-    <ul>
-    <li><b>Experience :</b> ${data.base_experience}</li>
-    <li><b>Order :</b> ${data.order}</li>
-    </ul>
-    </div>
-    <form>
-    <h1>Add a reservation</h1>
-    <input type='text' placeholder='Your name' required/>
-    <input type='date' placeholder='Start date' required/>
-    <input type='date' placeholder='End date' required/>
-    <button type='submit'>Reseve</button>
-    </form>
-    </div>
-  `;
-    Modal.style.display = 'block';
-  });
+  openPopMoal(id);
 };
 
 const displayPokemon = (pokemon) => {
