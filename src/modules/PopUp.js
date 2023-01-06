@@ -22,7 +22,11 @@ class PopUp {
   }
 
   // accept json arg
-  static open() {
+  static async open() {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/1');
+    const json = await response.json();
+    console.log(json);
+
     const body = document.querySelector('body');
 
     const section = this.createElements('section', body);
@@ -32,21 +36,21 @@ class PopUp {
     div.classList.add('pop-pokemon');
     const [img, name, properties] = this.createElements(['img', 'h3', 'div'], div);
 
-    img.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg';
-    name.innerText = 'Pikachu';
+    img.src = json.sprites.other['official-artwork'].front_default;
+    name.innerText = json.name;
     properties.classList.add('properties');
 
     const [weight, height, abilities, moves] = this.createElements(['p', 'p', 'p', 'p'], properties);
-    weight.innerText = 'Weight: 60 lbs';
+    weight.innerText = `Weight: ${json.weight}`;
     weight.classList.add('prop');
-    height.innerHTML = 'Height: 3 meters';
+    height.innerHTML = `Height: ${json.height}`;
     height.classList.add('prop');
-    abilities.innerHTML = 'Abilities: lightning, speed';
+    abilities.innerHTML = `Main ability: ${json.abilities[0].ability.name}`;
     abilities.classList.add('prop');
-    moves.innerHTML = 'Moves: pikachu';
+    moves.innerHTML = `Kill move: ${json.moves[0].move.name}`;
     moves.classList.add('prop');
 
-    const id = 'item1';
+    const id = json.name;
     this.loadComments(div, id);
 
     this.commentForm(div, id);
@@ -131,8 +135,8 @@ class PopUp {
         input.classList.add('submit');
 
         input.addEventListener('click', async () => {
-          let nameValue = document.querySelector('#name').value;
-          let commentValue = document.querySelector('#comment').value;
+          const nameValue = document.querySelector('#name').value;
+          const commentValue = document.querySelector('#comment').value;
 
           const data = {
             item_id: id,
@@ -154,8 +158,8 @@ class PopUp {
             await this.appendComments(comments, id, true);
           }
 
-          nameValue = null;
-          commentValue = null;
+          document.querySelector('#name').value = null;
+          document.querySelector('#comment').value = null;
         });
       } else {
         input.type = 'text';
