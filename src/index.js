@@ -46,14 +46,23 @@ window.reservePop = (id) => {
   </div>
   <h1 class="modaltitle">${data.name}</h1>
     <div class="below-box">
-    <p class="pop-up-description"></p>
-    <div class="sec-box">
-      <ul class="language_used_modal"></ul>
-    <div class="modal-button-div">
+    <ul>
+    <li><b>Height :</b> ${data.height}</li>
+    <li><b>Weight :</b> ${data.weight}</li>
+    </ul>
+    <ul>
+    <li><b>Experience :</b> ${data.base_experience}</li>
+    <li><b>Order :</b> ${data.order}</li>
+    </ul>
     </div>
+    <form>
+    <h1>Add a reservation</h1>
+    <input type='text' placeholder='Your name' required/>
+    <input type='date' placeholder='Start date' required/>
+    <input type='date' placeholder='End date' required/>
+    <button type='submit'>Reseve</button>
+    </form>
     </div>
-  </div>
-  </div>
   `;
     Modal.style.display = 'block';
   });
