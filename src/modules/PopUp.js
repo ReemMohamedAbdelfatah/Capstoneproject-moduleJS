@@ -30,11 +30,21 @@ class PopUp {
 
     const div = this.createElements('div', section);
     div.classList.add('pop-pokemon');
-    const [img, name, weight] = this.createElements(['img', 'h3', 'p'], div);
+    const [img, name, properties] = this.createElements(['img', 'h3', 'div'], div);
 
     img.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg';
     name.innerText = 'Pikachu';
-    weight.innerText = '60 lbs';
+    properties.classList.add('properties');
+
+    const [weight, height, abilities, moves] = this.createElements(['p', 'p', 'p', 'p'], properties);
+    weight.innerText = 'Weight: 60 lbs';
+    weight.classList.add('prop');
+    height.innerHTML = 'Height: 3 meters';
+    height.classList.add('prop');
+    abilities.innerHTML = 'Abilities: lightning, speed';
+    abilities.classList.add('prop');
+    moves.innerHTML = 'Moves: pikachu';
+    moves.classList.add('prop');
 
     const id = 'item1';
     this.loadComments(div, id);
