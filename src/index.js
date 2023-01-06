@@ -1,7 +1,11 @@
 /* eslint-disable  no-unused-vars  , no-use-before-define , no-plusplus */
 import style from './style.css';
-
 const pokeList = document.querySelector('#pokeList');
+/*document.addEventListener('DOMContentLoaded',()=>{
+  const likeBtn = document.querySelector('#like');
+  console.log(likeBtn);
+});*/
+//console.log(likeBtn);
 const fetchPokemon = () => {
   const promises = [];
   for (let i = 1; i <= 150; i++) {
@@ -28,7 +32,12 @@ const displayPokemon = (pokemon) => {
      <button id="commentBtn">Comment</button>
      <button id="reservationBtn">Reserve</button>
   </li>`).join('');
+  
+  const likeBtn = document.getElementById('like');
+  console.log(likeBtn);
   pokeList.innerHTML = pokemonHTMLString;
 };
 
 fetchPokemon();
+
+
