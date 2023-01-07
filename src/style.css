@@ -33,11 +33,18 @@ h1 {
   font-size: 2rem;
 }
 
+h2 {
+  display: flex;
+  height: 10vh;
+}
+
 ol {
   list-style: none;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: #f4f4f4;
   color: #222;
   padding: 40px;
@@ -82,8 +89,16 @@ footer p {
 }
 
 #like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: none;
   margin-left: 10px;
+}
+
+.fa-heart {
+  font-size: 3vw;
+  margin: 1vh 0;
 }
 
 button:hover { color: orangered; }
@@ -94,7 +109,6 @@ button:hover { color: orangered; }
 
 .card-subtitle {
   margin-top: 5px;
-  color: #666;
   font-weight: lighter;
 }
 

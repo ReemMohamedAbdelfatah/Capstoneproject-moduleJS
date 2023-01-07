@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-import counter from '../src/modules/counter.js';
-import displayPokemon from '../__mocks__/likeAPiMock.js';
+import counter from '../modules/counter.js';
+import displayPokemon from '../../__mocks__/likeAPiMock.js';
 
 describe('do we get numbers', () => {
   test('zero cards', () => {

@@ -1,5 +1,3 @@
-/* eslint-disable  no-unused-vars  , no-use-before-define , no-plusplus */
-
 import './style.css';
 import fetchLikes from './modules/fetchApiLikes.js';
 import postLikes from './modules/postApiLikes.js';
@@ -10,17 +8,6 @@ import open from './modules/Reservations/Reservations.js';
 
 const pokeList = document.querySelector('#pokeList');
 let likes = [];
-const fetchPokemon = async () => {
-  const promises = [];
-  for (let i = 1; i <= 18; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then((res) => res.json()));
-  }
-
-  likes = await fetchLikes();
-  Promise.all(promises).then((results) => { displayPokemon(results); });
-};
-
 const displayPokemon = (results) => {
   results.forEach((json) => {
     let noOflikes = likesNumber(json.name, likes);
@@ -38,21 +25,33 @@ const displayPokemon = (results) => {
     li.appendChild(h2);
     const buttonLike = document.createElement('button');
     buttonLike.setAttribute('id', 'like');
-    const pokeLikes = document.createElement('i');
-    pokeLikes.classList.add('number-likes');
-    pokeLikes.innerText = `${noOflikes} likes`;
-    buttonLike.appendChild(pokeLikes);
 
     const heart = document.createElement('i');
     heart.classList.add('fa', 'fa-heart');
     buttonLike.appendChild(heart);
 
+    const pokeLikes = document.createElement('i');
+    pokeLikes.classList.add('number-likes');
+    pokeLikes.innerText = `${noOflikes} likes`;
+    buttonLike.appendChild(pokeLikes);
+
+    const loadingLike = document.createElement('pre');
+    loadingLike.innerText = 'loading ...';
+    loadingLike.style.display = 'none';
+    buttonLike.appendChild(loadingLike);
+
     h2.appendChild(buttonLike);
-    buttonLike.addEventListener('click', () => {
-      postLikes(json.name);
+    buttonLike.addEventListener('click', async () => {
+      pokeLikes.style.display = 'none';
+      heart.style.display = 'none';
+      loadingLike.style.display = 'block';
+      await postLikes(json.name);
 
       noOflikes += 1;
       pokeLikes.innerText = `${noOflikes} likes`;
+      pokeLikes.style.display = 'block';
+      heart.style.display = 'block';
+      loadingLike.style.display = 'none';
     });
 
     const p = document.createElement('li');
@@ -80,6 +79,17 @@ const displayPokemon = (results) => {
 
   const count = counter(pokeList);
   document.querySelector('#title-count').innerHTML = `Pokemons (${count})`;
+};
+
+const fetchPokemon = async () => {
+  const promises = [];
+  for (let i = 1; i <= 18; i += 1) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  likes = await fetchLikes();
+  Promise.all(promises).then((results) => { displayPokemon(results); });
 };
 
 fetchPokemon();
