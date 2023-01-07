@@ -1,12 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
   <h3><b>JS Capestone project README</b></h3>
-
 </div>
 
 # 📗 Table of Contents
@@ -15,7 +10,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -28,14 +22,13 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 # 📖 [JS Capestone project README] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[JS Capestone project README]** is  app that consume API
+**[JS Capestone project README]** is app that consume the Pokemon API and Involvement API to make and interactable catologue of pokemons
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -70,94 +63,140 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[Add_new_Task]**
-- **[Remove_Task]**
-- **[Edit_Task]**
+- **[Look and like a pokemon]**
+- **[Comment on a pokemon]**
+- **[Make a reservation]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-## Screenshot
 
-![readme](./app_screenshoot.png)
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://reemmohamedabdelfatah.github.io/)
+### Demo
+[Demostation of app the in Loom](https://www.loom.com/share/913db60dfba340ec911b1acc6c9bc00e)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+- Create a local directory that you want to clone the repository.
 
-To get a local copy up and running, follow these steps.
+- Open the command prompt in the created directory.
+
+- On the terminal run this command -
+
+```sh
+ git clone [https://github.com/tsohleDev/To-do-planner.git]
+```
+
+- Go to the repository folder using command prompt
+```sh
+ cd To-do-planner
+```
+
+- Install the dev dependencies for linters run
+```sh
+ npm install.
+```
+- To start run
+```sh
+ npm start
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 
 In order to run this project you need:
 
-- Have visual studio Code in your PC.
-- Have a verified GitHub account.
-- Have a stable browser version.
+-A working browser application (Google chrome, Mozilla Fire fox, Microsoft edge ...)
+
+-VSCode or any other equivalent code editor
+
+-Node Package Manager (For running, debuging, or installing dependancies to be used)
+
+node and npm:
+
+-Linux
+```sh
+  sudo apt install nodejs npm
+```
+-windows 
+
+[download and install](https://nodejs.org/en/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
 
-- Clone this repository to your desired folder using terminal:
-  git clone https://github.com/ReemMohamedAbdelfatah/toDOLISTapp.git
+Clone this repository to your desired folder:
 
-### Install
+- Open the command prompt in the created directory.
 
-Install this project with:
+- On the terminal run this command 
+```sh
+git clone https://github.com/tsohleDev/To-do-planner.git
+```
 
-- webpack and linters.
+- Go to the repository folder using command prompt
+```sh
+ cd To-do-planner
+```
 
-### Usage
+- Install the dev dependencies for linters 
+```sh
+ run npm install.
+```
 
-To run the project, execute the following command:
+- To start run 
+```sh
+npm start
+```
 
-- npm run build
-- npm run dev
-
-### Run tests
-
-To run tests, run the following command:
-
-Coming Soon ....
-
-### Deployment
-
-You can deploy this project using:
-
-Coming Soon ....
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors <a name="authors"></a>
+<!-- Author -->
 
-> Mention all of the collaborators of this project.
+## 👤**Authors** <a name="authors"></a>
 
-👤 **Reem Muhammed**
+<h4>Reem Muhammed </h4>
 
-- GitHub: [@github](https://github.com/ReemMohamedAbdelfatah)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/reem-abd-el-fatah-a07543116)
+[github](https://github.com/ReemMohamedAbdelfatah)
+
+[linkedIn](https://www.linkedin.com/in/reem-abd-el-fatah-a07543116)
+
+<h4>Tsohle Mokhemisi </h4>
+
+[github](https://github.com/tsohleDev2)
+
+[twitter](https://twitter.com/RealTsohle)
+
+[linkedIn](https://www.linkedin.com/in/tsohle-mokhemisi-3687401b2/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Better_design]**
-- [ ] **[schedule_tasks_on_calendar]**
+- Create a mobile version of the site
+
+- Add a search bar to search info on the pokemon one likes
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CONTRIBUTING -->
+
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+> Credits to everyone who inspired the codebase.
 
-Feel free to check the [issues page](../../issues/).
+I would like to thank [Microverse](https://www.microverse.org/)
+
+Feel free to check the [issues page](https://github.com/tsohleDev/To-do-planner/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,9 +204,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project please star the project and feel free to add your own touches.
+Give a ⭐️ if you like this project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,27 +212,18 @@ If you like this project please star the project and feel free to add your own t
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+[Font Awesome](https://fontawesome.com/search?q=book&o=r)
 
-I would like to thank...
+[Icons8](https://icons8.com/icons/set/books)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[Bootsrtap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
-<!-- FAQ (optional) -->
+[Pokemon API](https://pokeapi.co/)
 
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[How_to_use_the_app?]**
-
-  - [I puted a small div in the top explaining how to use tha application]
-
-- **[Can_I_Contribute?]**
-
-  - [Sure, you're free to contribute and add your own touches]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
 <!-- LICENSE -->
 

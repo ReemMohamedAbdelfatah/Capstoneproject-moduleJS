@@ -1,0 +1,75 @@
+.pop-up {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+}
+
+p {
+  font-size: 2vw;
+}
+
+h3,
+h4 {
+  font-size: 3vw;
+}
+
+@media screen and (min-width: 678px) {
+  .pop-up {
+    width: 60%;
+    margin: 0 20%;
+    padding: 3vh 0;
+  }
+}
+
+div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  height: 4vh;
+  justify-self: flex-end;
+}
+
+.comment {
+  align-self: start;
+  margin: 0.5vh 5vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #000;
+  border-bottom: 16px solid #000;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.properties {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.prop {
+  margin: 0 0 2vh 20%;
+}
