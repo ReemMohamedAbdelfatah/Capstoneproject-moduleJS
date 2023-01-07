@@ -1,8 +1,17 @@
 .pop-up {
   display: flex;
   justify-content: center;
-  background-color: #0001;
+  background-color: #fff;
   width: 100%;
+}
+
+p {
+  font-size: 2vw;
+}
+
+h3,
+h4 {
+  font-size: 3vw;
 }
 
 @media screen and (min-width: 678px) {
