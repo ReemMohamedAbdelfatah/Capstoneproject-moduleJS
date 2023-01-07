@@ -73,10 +73,9 @@
 - **[Make a reservation]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-## Screenshot
 
-![readme](./app_screenshoot.png)
-
+### Demo
+<video src="https://www.loom.com/share/913db60dfba340ec911b1acc6c9bc00e"></video>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
