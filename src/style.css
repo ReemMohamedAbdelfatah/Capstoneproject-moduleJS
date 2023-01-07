@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+button {
+  margin: 5px;
+}
+
 #logo {
   color: black;
   border: 3px solid black;
@@ -37,7 +41,11 @@ ol {
   background-color: #f4f4f4;
   color: #222;
   padding: 40px;
-  width: 150px;
+  width: 166px;
+}
+
+.number-likes {
+  margin: 0 5px 0 0;
 }
 
 #pokeList {
