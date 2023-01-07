@@ -93,7 +93,7 @@ function card(json) {
       }
 
       document.querySelector('#container').removeChild(popUp);
-      popUp.hideAll(true);
+      PopUp.hideAll(true);
     }
   });
 
