@@ -41,7 +41,6 @@ ol {
   background-color: #f4f4f4;
   color: #222;
   padding: 40px;
-  width: 166px;
 }
 
 .number-likes {
@@ -51,8 +50,8 @@ ol {
 #pokeList {
   padding-inline-start: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 5fr));
-  gap: 7px;
+  grid-template-columns: repeat(3, auto);
+  gap: 10vw;
 }
 
 nav {

@@ -1,4 +1,5 @@
 import './PopUp.css';
+import fetchPokemon from '../index.js';
 
 class PopUp {
   static url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DoParOktO7RAA0Mhxygs/comments'
@@ -22,12 +23,9 @@ class PopUp {
   }
 
   // accept json arg
-  static async open() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/1');
-    const json = await response.json();
-    console.log(json);
-
-    const body = document.querySelector('body');
+  static async open(json) {
+    this.hideAll()
+    const body = document.querySelector('#container');
 
     const section = this.createElements('section', body);
     section.classList.add('pop-up');
@@ -62,6 +60,15 @@ class PopUp {
     });
   }
 
+  static hideAll(show = false) {
+    const cards = document.querySelectorAll('.card')
+    if (show) {
+      cards.forEach(card => {card.style.display = 'block'})
+    } else {
+      cards.forEach(card => {card.style.display = 'none'})
+    }
+  }
+
   static close() {
     const popUp = document.querySelector('.pop-up');
     if (popUp) {
@@ -69,8 +76,10 @@ class PopUp {
         popUp.removeChild(popUp.firstChild);
       }
 
-      document.querySelector('body').removeChild(popUp);
+      document.querySelector('#container').removeChild(popUp);
     }
+
+    fetchPokemon()
   }
 
   static async loadComments(section, id) {
