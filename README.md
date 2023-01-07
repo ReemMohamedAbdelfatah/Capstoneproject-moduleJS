@@ -162,17 +162,17 @@ npm start
 
 <h4>Reem Muhammed </h4>
 
-<img src="/images/github.svg" alt="logo" width="18"  height="18" />[githubhandle](https://github.com/ReemMohamedAbdelfatah)
-<br>
-<img src="/images/linkedin.svg" alt="logo" width="18"  height="18" />[linkedIn](https://www.linkedin.com/in/reem-abd-el-fatah-a07543116)
+[github](https://github.com/ReemMohamedAbdelfatah)
+
+[linkedIn](https://www.linkedin.com/in/reem-abd-el-fatah-a07543116)
 
 <h4>Tsohle Mokhemisi </h4>
 
-<img src="/images/github.svg" alt="logo" width="18"  height="18" />[githubhandle](https://github.com/tsohleDev2)
-<br>
-<img src="/images/twitter.svg" alt="logo" width="18"  height="18" /> [twitterhandle](https://twitter.com/RealTsohle)
-<br>
-<img src="/images/linkedin.svg" alt="logo" width="18"  height="18" />[linkedIn](https://www.linkedin.com/in/tsohle-mokhemisi-3687401b2/)
+[github](https://github.com/tsohleDev2)
+
+[twitter](https://twitter.com/RealTsohle)
+
+[linkedIn](https://www.linkedin.com/in/tsohle-mokhemisi-3687401b2/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
