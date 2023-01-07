@@ -75,7 +75,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Demo
-<video src="https://www.loom.com/share/913db60dfba340ec911b1acc6c9bc00e"></video>
+[Demostation of app the in Loom](https://www.loom.com/share/913db60dfba340ec911b1acc6c9bc00e)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
