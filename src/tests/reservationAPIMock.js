@@ -8,6 +8,8 @@ function apiMock(div, data) {
     node.classList.add('reservation');
     node.innerText = `${startDate} - ${endDate} by ${username}`;
   });
+
+  return 0;
 }
 
 export default apiMock;

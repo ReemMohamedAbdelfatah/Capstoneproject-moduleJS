@@ -1,5 +1,4 @@
 import './PopUp.css';
-import fetchPokemon from '../index.js';
 
 class PopUp {
   static url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DoParOktO7RAA0Mhxygs/comments'
@@ -79,7 +78,7 @@ class PopUp {
       document.querySelector('#container').removeChild(popUp);
     }
 
-    fetchPokemon();
+    this.hideAll(true);
   }
 
   static async loadComments(section, id) {

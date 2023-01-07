@@ -65,6 +65,7 @@ const displayPokemon = (results) => {
     li.appendChild(buttonComment);
     buttonComment.addEventListener('click', () => {
       PopUp.open(json);
+      likes = [];
     });
 
     const buttonReservations = document.createElement('button');
@@ -73,6 +74,7 @@ const displayPokemon = (results) => {
     li.appendChild(buttonReservations);
     buttonReservations.addEventListener('click', () => {
       open(json);
+      noOflikes = 0;
     });
   });
 

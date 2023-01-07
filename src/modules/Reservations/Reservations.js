@@ -3,7 +3,6 @@ import postAPI from './PostAPI.js';
 import getAPI from './GetAPI.js';
 import counter from './Counter.js';
 import PopUp from '../PopUp.js';
-import fetchPokemon from '../../index.js';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DoParOktO7RAA0Mhxygs/reservations';
 
@@ -94,7 +93,7 @@ function card(json) {
       }
 
       document.querySelector('#container').removeChild(popUp);
-      fetchPokemon();
+      popUp.hideAll(true);
     }
   });
 
