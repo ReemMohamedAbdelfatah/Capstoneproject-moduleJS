@@ -94,7 +94,7 @@ function card(json) {
       }
 
       document.querySelector('#container').removeChild(popUp);
-      fetchPokemon()
+      fetchPokemon();
     }
   });
 
@@ -157,7 +157,7 @@ function form(section, id) {
 }
 
 async function open(json) {
-  PopUp.hideAll()
+  PopUp.hideAll();
 
   const div = card(json);
 

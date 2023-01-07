@@ -1,11 +1,12 @@
 /* eslint-disable  no-unused-vars  , no-use-before-define , no-plusplus */
+
 import './style.css';
 import fetchLikes from './modules/fetchApiLikes.js';
 import postLikes from './modules/postApiLikes.js';
 import likesNumber from './modules/countLikes.js';
 import counter from './modules/counter.js';
-import PopUp from './modules/PopUp.js'
-import open from './modules/Reservations/Reservations';
+import PopUp from './modules/PopUp.js';
+import open from './modules/Reservations/Reservations.js';
 
 const pokeList = document.querySelector('#pokeList');
 let likes = [];
@@ -63,16 +64,16 @@ const displayPokemon = (results) => {
     buttonComment.setAttribute('id', 'commentBtn');
     li.appendChild(buttonComment);
     buttonComment.addEventListener('click', () => {
-      PopUp.open(json)
-    })
+      PopUp.open(json);
+    });
 
     const buttonReservations = document.createElement('button');
     buttonReservations.innerText = 'Reserve';
     buttonReservations.setAttribute('id', 'reservationBtn');
     li.appendChild(buttonReservations);
     buttonReservations.addEventListener('click', () => {
-      open(json)
-    })
+      open(json);
+    });
   });
 
   const count = counter(pokeList);
@@ -81,4 +82,4 @@ const displayPokemon = (results) => {
 
 fetchPokemon();
 
-export default fetchPokemon
+export default fetchPokemon;

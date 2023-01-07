@@ -24,7 +24,7 @@ class PopUp {
 
   // accept json arg
   static async open(json) {
-    this.hideAll()
+    this.hideAll();
     const body = document.querySelector('#container');
 
     const section = this.createElements('section', body);
@@ -61,11 +61,11 @@ class PopUp {
   }
 
   static hideAll(show = false) {
-    const cards = document.querySelectorAll('.card')
+    const cards = document.querySelectorAll('.card');
     if (show) {
-      cards.forEach(card => {card.style.display = 'block'})
+      cards.forEach((card) => { card.style.display = 'block'; });
     } else {
-      cards.forEach(card => {card.style.display = 'none'})
+      cards.forEach((card) => { card.style.display = 'none'; });
     }
   }
 
@@ -79,7 +79,7 @@ class PopUp {
       document.querySelector('#container').removeChild(popUp);
     }
 
-    fetchPokemon()
+    fetchPokemon();
   }
 
   static async loadComments(section, id) {
