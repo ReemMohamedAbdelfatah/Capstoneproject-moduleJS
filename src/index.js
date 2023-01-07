@@ -4,7 +4,7 @@ import fetchLikes from './modules/fetchApiLikes.js';
 import postLikes from './modules/postApiLikes.js';
 import likesNumber from './modules/countLikes.js';
 import counter from './modules/counter.js';
-import PopUp from './modules/PopUp.js'
+import PopUp from './modules/PopUp.js';
 
 const pokeList = document.querySelector('#pokeList');
 let likes = [];
@@ -62,8 +62,8 @@ const displayPokemon = (results) => {
     buttonComment.setAttribute('id', 'commentBtn');
     li.appendChild(buttonComment);
     buttonComment.addEventListener('click', () => {
-      PopUp.open(json)
-    })
+      PopUp.open(json);
+    });
 
     const buttonReservations = document.createElement('button');
     buttonReservations.innerText = 'Reserve';
@@ -77,4 +77,4 @@ const displayPokemon = (results) => {
 
 fetchPokemon();
 
-export default fetchPokemon
+export default fetchPokemon;
