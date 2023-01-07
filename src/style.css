@@ -1,3 +1,118 @@
-* {
+body {
+  background-color: orangered;
+  font-family: 'East Sea Dokdo', 'Dancing Script', cursive;
   margin: 0;
+}
+
+button {
+  margin: 5px;
+}
+
+#logo {
+  color: black;
+  border: 3px solid black;
+  height: 100px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 100px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  color: black;
+  font-size: 2rem;
+}
+
+ol {
+  list-style: none;
+}
+
+.card {
+  background-color: #f4f4f4;
+  color: #222;
+  padding: 40px;
+  width: 166px;
+}
+
+.number-likes {
+  margin: 0 5px 0 0;
+}
+
+#pokeList {
+  padding-inline-start: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 5fr));
+  gap: 7px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav-list {
+  display: flex;
+  font-size: 2rem;
+  gap: 25px;
+}
+
+#container {
+  overflow-y: scroll;
+  height: calc(80vh - 56px);
+  margin: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  font-size: 2rem;
+}
+
+footer p {
+  margin-left: 190px;
+}
+
+#like {
+  border: none;
+  margin-left: 10px;
+}
+
+button:hover { color: orangered; }
+
+.card:hover {
+  animation: bounce 0.5s linear;
+}
+
+.card-subtitle {
+  margin-top: 5px;
+  color: #666;
+  font-weight: lighter;
+}
+
+@keyframes bounce {
+  20% {
+    transform: translateY(-6px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
