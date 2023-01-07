@@ -2,6 +2,8 @@ import './reservation.css';
 import postAPI from './PostAPI.js';
 import getAPI from './GetAPI.js';
 import counter from './Counter.js';
+import PopUp from '../PopUp.js';
+import fetchPokemon from '../../index.js';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DoParOktO7RAA0Mhxygs/reservations';
 
@@ -59,7 +61,7 @@ async function reservations(section, id) {
 }
 
 function card(json) {
-  const body = document.querySelector('body');
+  const body = document.querySelector('#container');
 
   const section = createElements('section', body);
   section.classList.add('pop-up');
@@ -91,7 +93,8 @@ function card(json) {
         popUp.removeChild(popUp.firstChild);
       }
 
-      document.querySelector('body').removeChild(popUp);
+      document.querySelector('#container').removeChild(popUp);
+      fetchPokemon()
     }
   });
 
@@ -153,9 +156,8 @@ function form(section, id) {
   }
 }
 
-async function open() {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon/1');
-  const json = await response.json();
+async function open(json) {
+  PopUp.hideAll()
 
   const div = card(json);
 

@@ -5,6 +5,7 @@ import postLikes from './modules/postApiLikes.js';
 import likesNumber from './modules/countLikes.js';
 import counter from './modules/counter.js';
 import PopUp from './modules/PopUp.js'
+import open from './modules/Reservations/Reservations';
 
 const pokeList = document.querySelector('#pokeList');
 let likes = [];
@@ -69,6 +70,9 @@ const displayPokemon = (results) => {
     buttonReservations.innerText = 'Reserve';
     buttonReservations.setAttribute('id', 'reservationBtn');
     li.appendChild(buttonReservations);
+    buttonReservations.addEventListener('click', () => {
+      open(json)
+    })
   });
 
   const count = counter(pokeList);
